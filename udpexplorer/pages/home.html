@@ -382,11 +382,11 @@
 
 	function renderLastStats() {
 		updateText('networkHeight', lastStats.height.toString());
-		updateText('networkTransactions', lastStats.transactions_count.toString());
+		updateText('networkTransactions', lastStats.tx_count.toString());
 		updateText('networkDifficulty', getReadableDifficultyString(lastStats.difficulty, 2).toString());
 		updateText('totalCoins', getReadableCoins(parseInt(lastStats.already_generated_coins.replace('.', '')), 2));
 		updateText('emissionPercent', (parseInt(lastStats.already_generated_coins.replace('.', '')) /
-			10000000000000000000 * 100).toFixed(4) + "%");
+			10000000000000000).toFixed(4) + "%");
 		updateText('currentReward', getReadableCoins(lastStats.next_reward, 4));
 		updateText('networkHashrate', getReadableHashRateString(lastStats.difficulty / blockTargetInterval));
 		updateText('minimumFee', getReadableCoins(lastStats.min_fee, 6));

@@ -382,11 +382,10 @@
 
 	function renderLastStats() {
 		updateText('networkHeight', lastStats.height.toString());
-		updateText('networkTransactions', lastStats.tx_count.toString());
+		updateText('networkTransactions', lastStats.tx_count);
 		updateText('networkDifficulty', getReadableDifficultyString(lastStats.difficulty, 2).toString());
-		updateText('totalCoins', getReadableCoins(parseInt(lastStats.already_generated_coins.replace('.', '')), 2));
-		updateText('emissionPercent', (parseInt(lastStats.already_generated_coins.replace('.', '')) /
-			10000000000000000).toFixed(4) + "%");
+		updateText('totalCoins', lastStats.already_generated_coins/100000000);
+		updateText('emissionPercent', ((lastStats.already_generated_coins/100000000) / 100000000).toFixed(4) + "%");
 		updateText('currentReward', getReadableCoins(lastStats.next_reward, 4));
 		updateText('networkHashrate', getReadableHashRateString(lastStats.difficulty / blockTargetInterval));
 		updateText('minimumFee', getReadableCoins(lastStats.min_fee, 6));
@@ -732,11 +731,11 @@
 			method: "POST",
 			data: JSON.stringify({
 				jsonrpc: "2.0",
-				id: "explorer_init_blocks",
-				method: "getblockslist",
+				id: "getblocks",
+				method: "getblocks",
 				params: {
-					count: blocksPerPage,
-					height: loadHeight
+					height: loadHeight,
+					count: 20
 				}
 			}),
 			dataType: 'json',
@@ -782,9 +781,11 @@
 	function renderBlocks(blocksResults) {
 		var $blocksRows = $('#blocks_rows');
 		for (var i = 0; i < blocksPerPage; i++) {
-			Solvetimes.push(Math.abs(blocksResults[i].timestamp - blocksResults[i + 1].timestamp));
-			var block = blocksResults[i];
-			block.solvetime = Math.abs(blocksResults[i].timestamp - blocksResults[i + 1].timestamp);
+			//Solvetimes.push(Math.abs(blocksResults[i].timestamp - blocksResults[i + 1].timestamp));
+			
+			var block = blocksResults[i].block;
+			
+//			block.solvetime = Math.abs(blocksResults[i].timestamp - blocksResults[i + 1].timestamp);
 			var blockJson = JSON.stringify(block);
 			var existingRow = document.getElementById('blockRow' + block.height);
 			if (existingRow && existingRow.getAttribute('data-json') !== blockJson) {

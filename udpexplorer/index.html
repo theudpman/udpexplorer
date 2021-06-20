@@ -3,7 +3,7 @@
 <head lang="en">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
-	<title>Karbo (&#1180;) [KRB] Block Explorer</title>
+	<title>UDP Coin (&#1180;) [UDP] Block Explorer</title>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
@@ -38,7 +38,7 @@
 											</path>
 										</g>
 									</svg>
-								</span> <span class="hide-on-med-and-down">Karbo</span></a>
+								</span> <span class="hide-on-med-and-down">UDP Coin</span></a>
 						</li>
 					</ul>
 					<form class="header-search" action="javascript:handleSearch()">
@@ -57,6 +57,7 @@
 								<i class="material-icons">explore</i>
 							</a>
 						</li>
+						<!--
 						<li>
 							<a class="tooltipped hot_link menu waves-effect waves-block waves-light translation-button"
 								data-page="pools.html" href="#pools" data-position="bottom" data-tooltip="Mining pools.">
@@ -81,6 +82,7 @@
 								<i class="material-icons">apps</i>
 							</a>
 						</li>
+					-->
 						<li class="divider"></li>
 						<li>
 							<div class="switch switch-checkbox" style="margin-top: -2px;">
@@ -98,7 +100,7 @@
 			</div>
 		</nav>
 	</div>
-
+<!--
 	<ul id="dropdown_tools" class="dropdown-content"
 		style="white-space: nowrap; position: absolute; top: 64px; opacity: 1; display: none;">
 		<li>
@@ -177,7 +179,7 @@
 			Address
 		</a>
 	</li>
-
+-->
 </header>
 <div id="content">
 	<div class="container">
@@ -226,28 +228,24 @@
 					</small>
 				</p>
 
-				<ul>
-					<li><a href="http://karbo.io/">karbo.io</a></li>
-					<li><a href="http://karbo.org/">karbo.org</a></li>
-				</ul>
 
 			</div>
 			<div class="col l4 s12">
 
 				<h5>Specification</h5>
 				<ul class="text-info">
-					<li>Ticker: KRB</li>
-					<li>Symbol: Ҝ &ndash; Ka with vertical stroke</li>
+					<li>Ticker: UDP</li>
+					<li>Symbol: UDP</li>
 					<li>Proof-of-Work algorithm: CryptoNight</li>
-					<li>Block time: 240 seconds</li>
+					<li>Block time: 60 seconds</li>
 					<li>Difficulty: retarget each block</li>
 					<li>Block reward: slight decrease every block
-						R = (S - A)/2<sup>18</sup><br/>
+						R = (S - A)/2<sup>20</sup><br/>
 						where 'S' initial supply and 'A' is already generated coins
 					</li>
-					<li>Divisible: up to 10<sup>12</sup> atomic units (up to 12 decimal places)</li>
-					<li>Emission: &infin;, initial supply of 10,000,000,000,000,000,000 atomic units, or 10 million krb.</li>
-					<li>Tail emission: ~2% inflation per year.</li>
+					<li>Divisible: up to 10<sup>8</sup> atomic units (up to 8 decimal places)</li>
+					<li>Emission: &infin;, initial supply of 0 UDP.</li>
+					<li>Tail emission: ~2.6% inflation per year.</li>
 				</ul>
 
 			</div>
@@ -255,7 +253,7 @@
 	</div>
 	<div class="footer-copyright">
 		<div class="container">
-			&copy; 2017-2020 <strong>Karbo Developers</strong>
+			&copy; 2021 <strong>UDP Coin Developers</strong>
 		</div>
 	</div>
 </footer>

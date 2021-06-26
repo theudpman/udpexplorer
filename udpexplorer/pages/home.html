@@ -400,7 +400,7 @@
 			data: JSON.stringify({
 				jsonrpc: "2.0",
 				id: "explorer_blocks_list",
-				method: "getblockslist",
+				method: "getblocks",
 				params: {
 					count: blocksPerPage,
 					height: $('#blocks_rows').children().last().data('height')
@@ -437,7 +437,7 @@
 			data: JSON.stringify({
 				jsonrpc: "2.0",
 				id: "explorer_prev_nav",
-				method: "getblockslist",
+				method: "getblocks",
 				params: {
 					count: blocksPerPage,
 					height: openHeight
@@ -484,7 +484,7 @@
 			data: JSON.stringify({
 				jsonrpc: "2.0",
 				id: "explorer_next_nav",
-				method: "getblockslist",
+				method: "getblocks",
 				params: {
 					count: blocksPerPage,
 					height: openHeight
@@ -530,7 +530,7 @@
 			data: JSON.stringify({
 				jsonrpc: "2.0",
 				id: "explorer_first_nav",
-				method: "getblockslist",
+				method: "getblocks",
 				params: {
 					count: blocksPerPage,
 					height: blocksPerPage
@@ -568,7 +568,7 @@
 			data: JSON.stringify({
 				jsonrpc: "2.0",
 				id: "explorer_last_nav",
-				method: "getblockslist",
+				method: "getblocks",
 				params: {
 					count: blocksPerPage,
 					height: lastStats.last_known_block_index
@@ -607,7 +607,7 @@
 			data: JSON.stringify({
 				jsonrpc: "2.0",
 				id: "explorer_goto_height",
-				method: "getblockslist",
+				method: "getblocks",
 				params: {
 					count: blocksPerPage,
 					height: gotoHeight
@@ -731,11 +731,11 @@
 			method: "POST",
 			data: JSON.stringify({
 				jsonrpc: "2.0",
-				id: "getblocks",
+				id: "api-explorer",
 				method: "getblocks",
 				params: {
 					height: loadHeight,
-					count: 20
+					count: blocksPerPage
 				}
 			}),
 			dataType: 'json',

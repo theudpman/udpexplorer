@@ -5,7 +5,7 @@ var apiList = ["http://45.33.77.14:11101"];
 
 
 var blockTargetInterval = 60;
-var coinUnits = 10000000;
+var coinUnits = 100000000;
 var symbol = 'UDP';
 var refreshDelay = 30000;
 var blocksPerPage = 20;
